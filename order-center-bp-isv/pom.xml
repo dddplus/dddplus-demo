@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>cp-ddd-example</artifactId>
+        <artifactId>dddplus-demo</artifactId>
         <version>0.0.1</version>
     </parent>
 
