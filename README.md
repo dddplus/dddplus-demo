@@ -25,7 +25,7 @@ java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
 #java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 9090 plugin
 
 # in another terminal
-curl -XPOST http://localhost:9090/order # submit an order
+curl -XPOST http://localhost:9090/order             # submit an order
 curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 ```
 
