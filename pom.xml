@@ -20,8 +20,6 @@
         <jdk.version>1.8</jdk.version>
         <maven.compiler.failOnError>true</maven.compiler.failOnError>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.jacoco.version>0.8.5</maven.jacoco.version>
-        <maven.deploy.skip>true</maven.deploy.skip>
 
         <cp.ddd.framework.version>0.0.1-SNAPSHOT</cp.ddd.framework.version>
 
@@ -70,14 +68,6 @@
                 <version>2.21.0</version>
                 <configuration>
                     <skipTests>false</skipTests>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-                <configuration>
-                    <skip>${maven.deploy.skip}</skip>
                 </configuration>
             </plugin>
         </plugins>
