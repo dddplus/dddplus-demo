@@ -10,6 +10,8 @@ import org.slf4j.MDC;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @Slf4j
@@ -19,7 +21,8 @@ public class OrderController {
     @Resource
     private SubmitOrder submitOrder;
 
-    // 下单服务
+    // 模拟下单
+    // curl -XPOST localhost:9090/order?type=isv
     @RequestMapping(value = "/order", method = {RequestMethod.POST, RequestMethod.GET})
     @ResponseBody
     public String submitOrder(@RequestParam(required = false) String type) {
@@ -33,6 +36,7 @@ public class OrderController {
         // 具体项目使用MapStruct会更方便，这里为了演示，全手工进行对象转换了
         RequestProfile requestProfile = new RequestProfile();
         requestProfile.setTraceId(String.valueOf(System.nanoTime()));
+
         // 演示个性化字段：站点联系人号码是ISV前台场景才会需要的字段，其他场景不需要
         requestProfile.getExt().put("_station_contact_", "139100988343");
         MDC.put("tid", requestProfile.getTraceId()); // session scope log identifier
@@ -41,7 +45,7 @@ public class OrderController {
         OrderModelCreator creator = new OrderModelCreator();
         creator.setRequestProfile(requestProfile);
         creator.setSource(type);
-        creator.setCustomerNo("home");
+        creator.setCustomerNo("goog"); // if 'home', HomeAppliancePattern will match
         creator.setExternalNo("20200987655");
         OrderModel model = OrderModel.createWith(creator);
 
@@ -53,20 +57,39 @@ public class OrderController {
         return "Order accepted!";
     }
 
-    @RequestMapping(value = "/reloadIsv")
+    // 模拟热加载Plugin Jar
+    // curl localhost:9090/reload?plugin=isv
+    @RequestMapping(value = "/reload")
     @ResponseBody
-    public String reloadIsv() {
-        MDC.put("tid", String.valueOf(System.nanoTime()));
+    public String reload(@RequestParam(required = false) String plugin) {
+        MDC.put("tid", String.valueOf(System.nanoTime())); // session scope log identifier
 
-        log.info("CWD:{}", System.getProperty("user.dir"));
+        if (plugin == null) {
+            plugin = "isv";
+        } else {
+            plugin = plugin.toLowerCase();
+        }
 
+        String pluginJar = plugins.get(plugin);
+        if (pluginJar == null) {
+            log.warn("Invalid plugin param:{}", plugin);
+            return "Unknown plugin:" + plugin;
+        }
+
+        log.info("Reloading plugin:{} {}", plugin, pluginJar);
         try {
-            Container.getInstance().loadPartnerPlugin("isv", "order-center-bp-isv/target/order-center-bp-isv-0.0.1.jar", true);
+            Container.getInstance().loadPartnerPlugin(plugin, pluginJar, true);
         } catch (Throwable cause) {
-            log.error("fails to reload ISV Plugin Jar", cause);
+            log.error("fails to reload Plugin:{}", plugin, cause);
             return cause.getMessage();
         }
 
-        return "ISV Plugin Reloaded!";
+        return plugin + " Plugin Reloaded!";
+    }
+
+    private static final Map<String, String> plugins = new HashMap<>();
+    static {
+        plugins.put("isv", "order-center-bp-isv/target/order-center-bp-isv-0.0.1.jar");
+        plugins.put("ka", "order-center-bp-ka/target/order-center-bp-ka-0.0.1.jar");
     }
 }
