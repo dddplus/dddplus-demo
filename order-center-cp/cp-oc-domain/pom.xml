@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-domain</artifactId>
-    <name>DDD :: Demo :: CP :: Domain</name>
+    <name>DDDPlus :: Demo :: CP :: Domain</name>
 
     <dependencies>
         <dependency>
@@ -19,7 +19,7 @@
 
         <dependency>
             <groupId>io.github.dddplus</groupId>
-            <artifactId>cp-ddd-plugin</artifactId>
+            <artifactId>dddplus-plugin</artifactId>
             <version>${cp.ddd.framework.version}</version>
         </dependency>
         <dependency>

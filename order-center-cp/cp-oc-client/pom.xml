@@ -8,12 +8,12 @@
     </parent>
 
     <artifactId>cp-oc-client</artifactId>
-    <name>DDD :: Demo :: CP :: Client</name>
+    <name>DDDPlus :: Demo :: CP :: Client</name>
 
     <dependencies>
         <dependency>
             <groupId>io.github.dddplus</groupId>
-            <artifactId>cp-ddd-spec</artifactId>
+            <artifactId>dddplus-spec</artifactId>
             <version>${cp.ddd.framework.version}</version>
         </dependency>
         <dependency>

@@ -8,13 +8,13 @@
     </parent>
 
     <artifactId>cp-oc-spec</artifactId>
-    <name>DDD :: Demo :: CP :: Spec</name>
+    <name>DDDPlus :: Demo :: CP :: Spec</name>
 
     <dependencies>
         <!-- 中台为业务前台提供的spec包，不依赖domain层，只定义接口：domain model和扩展点，以及步骤的声明 -->
         <dependency>
             <groupId>io.github.dddplus</groupId>
-            <artifactId>cp-ddd-runtime</artifactId>
+            <artifactId>dddplus-runtime</artifactId>
             <version>${cp.ddd.framework.version}</version>
         </dependency>
     </dependencies>

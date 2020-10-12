@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>cp-oc-main</artifactId>
-    <name>DDD :: Demo :: CP :: Main</name>
+    <name>DDDPlus :: Demo :: CP :: Main</name>
 
     <dependencies>
         <dependency>

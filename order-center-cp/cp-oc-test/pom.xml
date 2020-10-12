@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-test</artifactId>
-    <name>DDD :: Demo :: Test</name>
+    <name>DDDPlus :: Demo :: Test</name>
 
     <dependencies>
         <dependency>
@@ -19,7 +19,7 @@
 
         <dependency>
             <groupId>io.github.dddplus</groupId>
-            <artifactId>cp-ddd-plugin</artifactId>
+            <artifactId>dddplus-plugin</artifactId>
             <version>${cp.ddd.framework.version}</version>
         </dependency>
 
