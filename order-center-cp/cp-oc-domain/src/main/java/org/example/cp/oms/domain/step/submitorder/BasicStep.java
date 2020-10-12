@@ -21,6 +21,8 @@ public class BasicStep extends SubmitOrderStep {
     @Override
     public void execute(@NotNull OrderModel model) throws OrderException {
         model.setStep(this.stepCode());
+
+        // 动态决定后续步骤：决定后续步骤这个行为，也抽象为扩展点，不同场景进行实现，以实现动态步骤编排的业务多态性
         List<String> revisedSteps = DDD.findAbility(ReviseStepsAbility.class).revisedSteps(model);
         if (revisedSteps != null) {
             log.info("重新编排步骤：{}", revisedSteps);
