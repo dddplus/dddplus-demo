@@ -31,10 +31,10 @@ curl http://localhost:9090/order # submit an order
 
 - [中台架构特色的DDD分层架构](order-center-cp)
 - 扩展点：订单的防并发
-   - [如何识别该业务属于KA业务前台](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/partner/KaPartner.java)
-   - [扩展点声明](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/ext/ISerializableIsolationExt.java)
-   - [KA业务前台的实现](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/SerializableIsolationExt.java)
-   - [ISV业务前台的实现](order-center-bp-isv/src/main/java/org/example/bp/oms/isv/extension/SerializableIsolationExt.java)
+   - [如何识别该业务属于KA业务前台](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/KaPartner.java)
+   - [一个扩展点声明](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/ext/ISerializableIsolationExt.java)
+   - [该扩展点，KA业务前台的实现](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/SerializableIsolationExt.java)
+   - [该扩展点，ISV业务前台的实现](order-center-bp-isv/src/main/java/org/example/bp/oms/isv/extension/SerializableIsolationExt.java)
    - [扩展点被封装到DomainAbility](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/ability/SerializableIsolationAbility.java)
    - [扩展点被调用](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/service/SubmitOrder.java)
    - [前台对中台的步骤编排](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/DecideStepsExt.java)
