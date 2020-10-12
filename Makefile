@@ -5,10 +5,10 @@ clean:
 	@mvn clean
 
 run:package
-	@java -jar order-center-cp/cp-oc-main/target/cp-ddd-framework-demo.jar
+	@java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
 
 run-plugin:package
-	@java -jar order-center-cp/cp-oc-main/target/cp-ddd-framework-demo.jar 9090 plugin
+	@java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 9090 plugin
 
 plugin-loading:clean
 	@mvn package -Pplugin

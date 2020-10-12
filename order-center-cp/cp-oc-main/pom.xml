@@ -80,7 +80,7 @@
     </dependencies>
 
     <build>
-        <finalName>cp-ddd-framework-demo</finalName>
+        <finalName>dddplus-demo</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
