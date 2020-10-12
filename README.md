@@ -18,10 +18,8 @@
 ## 如何运行该演示
 
 ``` bash
-git clone https://github.com/funkygao/cp-ddd-framework.git
-cd cp-ddd-framework/
-mvn install
-cd demo/
+git clone https://github.com/dddplus/dddplus-demo.git
+cd dddplus-demo
 mvn package
 java -jar order-center-cp/cp-oc-main/target/cp-ddd-framework-demo.jar
 
