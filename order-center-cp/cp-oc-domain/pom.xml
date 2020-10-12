@@ -20,7 +20,7 @@
         <dependency>
             <groupId>io.github.dddplus</groupId>
             <artifactId>dddplus-plugin</artifactId>
-            <version>${cp.ddd.framework.version}</version>
+            <version>${dddplus.version}</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>

@@ -15,7 +15,7 @@
         <dependency>
             <groupId>io.github.dddplus</groupId>
             <artifactId>dddplus-runtime</artifactId>
-            <version>${cp.ddd.framework.version}</version>
+            <version>${dddplus.version}</version>
         </dependency>
     </dependencies>
 
