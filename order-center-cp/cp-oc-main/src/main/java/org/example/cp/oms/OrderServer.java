@@ -26,17 +26,18 @@ public class OrderServer {
     private static final int DEFAULT_PORT = 9090;
     private static final String CONTEXT_PATH = "/";
     private static final String MAPPING_URL = "/*";
-    private static String config;
+
     private static final String CONFIG_LOCATION = "org.example.cp.oms.config";
     private static final String PLUGIN_LOCATION = "org.example.cp.oms.plugin";
 
     public static void main(String[] args) throws Exception {
         int port = DEFAULT_PORT;
-        config = CONFIG_LOCATION;
+        String config = CONFIG_LOCATION;
         if (args.length > 0) {
             try {
                 port = Integer.valueOf(args[0]);
             } catch (NumberFormatException ignored) {
+                log.error("Invalid arg", ignored);
             }
 
             if (args.length > 1) {
@@ -46,13 +47,13 @@ public class OrderServer {
             }
         }
 
-        new OrderServer().startJetty(port);
+        new OrderServer().startJetty(port, config);
     }
 
-    private void startJetty(int port) throws Exception {
+    private void startJetty(int port, String config) throws Exception {
         log.info("Starting server at port {}", port);
         Server server = new Server(port);
-        server.setHandler(getServletContextHandler(getContext()));
+        server.setHandler(getServletContextHandler(getContext(config)));
         server.start();
         log.info("Server started at port {}", port);
         log.info("现在，另起一个终端窗口，模拟下单，执行命令：");
@@ -69,7 +70,7 @@ public class OrderServer {
         return contextHandler;
     }
 
-    private static WebApplicationContext getContext() {
+    private static WebApplicationContext getContext(String config) {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.setConfigLocation(config);
         return context;
