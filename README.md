@@ -22,9 +22,11 @@ git clone https://github.com/dddplus/dddplus-demo.git
 cd dddplus-demo
 mvn package
 java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
+#java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 9090 plugin
 
 # in another terminal
 curl -XPOST http://localhost:9090/order # submit an order
+curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 ```
 
 ## 代码快速入门
