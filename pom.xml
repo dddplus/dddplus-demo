@@ -49,6 +49,14 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <name>OSS Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
+
     <build>
         <defaultGoal>package</defaultGoal>
         <plugins>
