@@ -24,7 +24,7 @@ mvn package
 java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
 
 # in another terminal
-curl http://localhost:9090/order # submit an order
+curl -XPOST http://localhost:9090/order # submit an order
 ```
 
 ## 代码快速入门
