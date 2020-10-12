@@ -9,7 +9,7 @@ import org.example.cp.oms.spec.model.vo.LockEntry;
 import javax.validation.constraints.NotNull;
 import java.util.concurrent.TimeUnit;
 
-@Extension(code = ColdChainB2BPattern.CODE, value = "ccb2bSerializableIsolationExt")
+@Extension(code = ColdChainB2BPattern.CODE, value = "ccb2bSerializableIsolationExt", name = "冷链B2B模式下的防并发机制")
 public class SerializableIsolationExt implements ISerializableIsolationExt {
 
     @Override

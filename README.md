@@ -21,7 +21,7 @@
 git clone https://github.com/dddplus/dddplus-demo.git
 cd dddplus-demo
 mvn package
-java -jar order-center-cp/cp-oc-main/target/cp-ddd-framework-demo.jar
+java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
 
 # in another terminal
 curl http://localhost:9090/order # submit an order
@@ -35,6 +35,7 @@ curl http://localhost:9090/order # submit an order
    - [一个扩展点声明](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/ext/ISerializableIsolationExt.java)
    - [该扩展点，KA业务前台的实现](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/SerializableIsolationExt.java)
    - [该扩展点，ISV业务前台的实现](order-center-bp-isv/src/main/java/org/example/bp/oms/isv/extension/SerializableIsolationExt.java)
+   - [该扩展点，中台的一个业务场景实现](order-center-pattern/src/main/java/org/example/cp/oms/pattern/extension/coldchain_b2b/SerializableIsolationExt.java)
    - [扩展点被封装到DomainAbility](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/ability/SerializableIsolationAbility.java)
    - [扩展点被调用](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/service/SubmitOrder.java)
    - [前台对中台的步骤编排](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/DecideStepsExt.java)
