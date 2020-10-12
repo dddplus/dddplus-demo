@@ -42,6 +42,7 @@ public class OrderServer {
             if (args.length > 1) {
                 // Plugin dynamic loading
                 config = PLUGIN_LOCATION;
+                log.info("Using config:{}", config);
             }
         }
 
