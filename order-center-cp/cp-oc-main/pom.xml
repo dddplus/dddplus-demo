@@ -154,6 +154,9 @@
         </profile>
         <profile>
             <id>plugin</id>
+            <dependencies>
+                <!-- plugin profile下，bp jar都不静态引入，而是靠Container进行动态加载 -->
+            </dependencies>
         </profile>
     </profiles>
 

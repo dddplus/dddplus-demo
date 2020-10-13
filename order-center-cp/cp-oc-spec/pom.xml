@@ -9,6 +9,7 @@
 
     <artifactId>cp-oc-spec</artifactId>
     <name>DDDPlus :: Demo :: CP :: Spec</name>
+    <description>中台为前台的赋能和扩展机制输出</description>
 
     <dependencies>
         <!-- 中台为业务前台提供的spec包，不依赖domain层，只定义接口：domain model和扩展点，以及步骤的声明 -->
