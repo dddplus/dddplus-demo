@@ -18,6 +18,8 @@ import java.io.IOException;
  *
  * 下单：
  * curl -XPOST localhost:9090/order
+ * 热加载：
+ * curl localhost:9090/reload
  *
  * 查看日志，了解服务端的执行过程.
  */
@@ -56,8 +58,9 @@ public class OrderServer {
         server.setHandler(getServletContextHandler(getContext(config)));
         server.start();
         log.info("Server started at port {}", port);
-        log.info("现在，另起一个终端窗口，模拟下单，执行命令：");
-        log.info("curl -XPOST localhost:9090/order");
+        log.info("模拟下订单，执行命令：curl -XPOST localhost:9090/order?type=isv");
+        log.info("模拟热加载，执行命令：curl localhost:9090/reload?plugin=isv");
+        log.info("Ready to accept requests!");
         server.join();
     }
 
