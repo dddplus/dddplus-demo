@@ -1,17 +1,17 @@
 package:clean
 	@mvn package
 
+package-plugin:clean
+	@mvn package -Pplugin
+
 clean:
 	@mvn clean
 
 run:package
 	@java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
 
-run-plugin:package
+run-plugin:package-plugin
 	@java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 9090 plugin
-
-plugin-loading:clean
-	@mvn package -Pplugin
 
 depgraph:
 	@mvn install
