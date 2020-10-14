@@ -13,12 +13,6 @@
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>cp-oc-client</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.example</groupId>
             <artifactId>cp-oc-infrastructure</artifactId>
             <version>${project.version}</version>
         </dependency>

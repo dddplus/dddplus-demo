@@ -12,7 +12,6 @@
     <name>DDDPlus :: Demo :: CP</name>
 
     <modules>
-        <module>cp-oc-client</module>
         <module>cp-oc-controller</module>
         <module>cp-oc-domain</module>
         <module>cp-oc-infrastructure</module>
