@@ -6,7 +6,7 @@ import org.example.cp.oms.spec.Steps;
 import io.github.dddplus.annotation.Extension;
 import io.github.dddplus.ext.IDecideStepsExt;
 import io.github.dddplus.model.IDomainModel;
-import org.example.cp.oms.spec.resource.IStockService;
+import org.example.cp.oms.spec.resource.IStockRpc;
 
 import javax.annotation.Resource;
 import javax.validation.constraints.NotNull;
@@ -17,7 +17,7 @@ public class DecideStepsExt implements IDecideStepsExt {
     private static final List<String> emptySteps = Collections.emptyList();
 
     @Resource
-    private IStockService stockService;
+    private IStockRpc stockService;
 
     @Override
     @AutoLogger

@@ -16,7 +16,7 @@ import java.util.Map;
 
 @Slf4j
 @Extension(code = IsvPartner.CODE, value = "isvCustomModel", name = "ISV前台的订单个性化字段")
-public class CustomModel implements IModelAttachmentExt<IOrderModel> {
+public class CustomModelExt implements IModelAttachmentExt<IOrderModel> {
     private static final String KEY_STATION_NO = "_station_contact_";
 
     @Override

@@ -1,12 +1,12 @@
 package org.example.cp.oms.infra.resource;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.cp.oms.spec.resource.IStockService;
+import org.example.cp.oms.spec.resource.IStockRpc;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class StockService implements IStockService {
+public class StockRpc implements IStockRpc {
     @Override
     public boolean preOccupyStock(String sku) {
         // 真实场景，会通过RPC/RESTful接口调用“库存中心”的服务接口

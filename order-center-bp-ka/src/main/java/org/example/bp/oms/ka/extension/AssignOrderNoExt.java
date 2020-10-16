@@ -5,7 +5,7 @@ import org.example.bp.oms.ka.KaPartner;
 import org.example.cp.oms.spec.ext.IAssignOrderNoExt;
 import org.example.cp.oms.spec.model.IOrderModel;
 import io.github.dddplus.annotation.Extension;
-import org.example.cp.oms.spec.resource.IStockService;
+import org.example.cp.oms.spec.resource.IStockRpc;
 
 import javax.annotation.Resource;
 import javax.validation.constraints.NotNull;
@@ -16,7 +16,7 @@ public class AssignOrderNoExt implements IAssignOrderNoExt {
     public static final String KA_ORDER_NO = "KA1012";
 
     @Resource
-    private IStockService stockService;
+    private IStockRpc stockService;
 
     @Override
     public void assignOrderNo(@NotNull IOrderModel model) {
