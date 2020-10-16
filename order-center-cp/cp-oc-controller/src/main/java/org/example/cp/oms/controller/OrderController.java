@@ -76,6 +76,8 @@ public class OrderController {
             return "Unknown plugin:" + plugin;
         }
 
+        log.info("active plugins: {}", Container.getInstance().getActivePlugins());
+
         log.info("Reloading plugin:{} {}", plugin, pluginJar);
         try {
             Container.getInstance().loadPartnerPlugin(plugin, pluginJar, true);
