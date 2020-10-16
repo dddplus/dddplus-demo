@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
-import static org.example.cp.oms.LogAssert.assertContains;
+import static io.github.dddplus.testing.LogAssert.assertContains;
 import static org.junit.Assert.assertEquals;
 
 @Slf4j

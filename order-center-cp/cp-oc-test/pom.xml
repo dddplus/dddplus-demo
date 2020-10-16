@@ -28,6 +28,12 @@
             <version>${dddplus.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.dddplus</groupId>
+            <artifactId>dddplus-unit</artifactId>
+            <version>${dddplus.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- 中台把Plugin需要的第三方都准备好，Plugin pom以provided scope引入 -->
         <dependency>
