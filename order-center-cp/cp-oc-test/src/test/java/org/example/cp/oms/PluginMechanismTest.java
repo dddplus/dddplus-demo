@@ -46,7 +46,7 @@ public class PluginMechanismTest {
         for (int i = 0; i < 1000; i++) {
             // 同一个jar，load多次，模拟热更新，然后下单验证：走ISV前台逻辑
             log.info(String.join("", Collections.nCopies(50, String.valueOf(i + 1))));
-            Container.getInstance().loadPartnerPlugin("isv", localIsvJar, true);
+            Container.getInstance().loadPartnerPlugin("isv", "v1", localIsvJar, true);
             submitOrder(applicationContext, true);
 
             // 通过日志验证执行正确性
@@ -80,7 +80,7 @@ public class PluginMechanismTest {
         log.info(String.join("", Collections.nCopies(50, "=")));
 
         // 加载KA插件，并给KA下单
-        Container.getInstance().loadPartnerPlugin("ka", localKaJar, true);
+        Container.getInstance().loadPartnerPlugin("ka", "v1", localKaJar, true);
         submitOrder(applicationContext, false);
         assertContains(
                 "KA 预占库存 GSM098",
@@ -101,7 +101,7 @@ public class PluginMechanismTest {
         log.info("sleeping 2m，等待修改bp-isv里逻辑后发布新jar...");
         TimeUnit.MINUTES.sleep(2); // 等待手工发布新jar
         log.info("2m is up, go!");
-        Container.getInstance().loadPartnerPlugin("isv", localIsvJar, true);
+        Container.getInstance().loadPartnerPlugin("isv", "v1", localIsvJar, true);
         submitOrder(applicationContext, true); // 重新提交订单，看看是否新jar逻辑生效
 
         applicationContext.stop();

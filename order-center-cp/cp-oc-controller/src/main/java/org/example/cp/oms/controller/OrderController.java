@@ -80,7 +80,8 @@ public class OrderController {
 
         log.info("Reloading plugin:{} {}", plugin, pluginJar);
         try {
-            Container.getInstance().loadPartnerPlugin(plugin, pluginJar, true);
+            // 具体使用时，需要一套plugin jar的发布平台配合使用：发布，灰度发布，回滚，版本控制，打包管理等
+            Container.getInstance().loadPartnerPlugin(plugin, "v1", pluginJar, true);
         } catch (Throwable cause) {
             log.error("fails to reload Plugin:{}", plugin, cause);
             return cause.getMessage();
