@@ -1,6 +1,8 @@
 # Demo of cp-ddd-framework
 
-演示如何使用[cp-ddd-framework, also known as DDDplus](https://github.com/funkygao/cp-ddd-framework)实现一套`订单履约中台`。
+演示如何使用[cp-ddd-framework](https://github.com/funkygao/cp-ddd-framework)实现一套`订单履约中台`。
+
+Note: cp-ddd-framework is DDDplus framework.
 
 ## 目录
 
