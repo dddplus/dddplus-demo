@@ -54,10 +54,6 @@
             <id>ossrh-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
-        <repository>
-            <id>ossrh-releases</id>
-            <url>https://oss.sonatype.org/service/local/repositories/releases/content/</url>
-        </repository>
     </repositories>
 
     <build>
