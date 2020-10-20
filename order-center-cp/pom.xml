@@ -9,7 +9,7 @@
 
     <artifactId>order-center-cp</artifactId>
     <packaging>pom</packaging>
-    <name>DDDPlus :: Demo :: CP</name>
+    <name>DDDplus :: Demo :: CP</name>
 
     <modules>
         <module>cp-oc-controller</module>

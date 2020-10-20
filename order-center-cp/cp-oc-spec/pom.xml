@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-spec</artifactId>
-    <name>DDDPlus :: Demo :: CP :: Spec</name>
+    <name>DDDplus :: Demo :: CP :: Spec</name>
     <description>中台为前台的赋能和扩展机制输出</description>
 
     <dependencies>

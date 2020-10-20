@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>order-center-bp-ka</artifactId>
-    <name>DDDPlus :: Demo :: BP :: KA</name>
+    <name>DDDplus :: Demo :: BP :: KA</name>
 
     <dependencies>
         <!-- 业务前台依赖中台的spec jar进行能力复用和扩展 -->

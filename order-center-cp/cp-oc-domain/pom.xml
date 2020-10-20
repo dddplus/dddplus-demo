@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-domain</artifactId>
-    <name>DDDPlus :: Demo :: CP :: Domain</name>
+    <name>DDDplus :: Demo :: CP :: Domain</name>
 
     <dependencies>
         <dependency>

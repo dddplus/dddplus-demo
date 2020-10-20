@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-infrastructure</artifactId>
-    <name>DDDPlus :: Demo :: CP :: Infrastructure</name>
+    <name>DDDplus :: Demo :: CP :: Infrastructure</name>
 
     <properties>
         <mapstruct.version>1.3.1.Final</mapstruct.version>
