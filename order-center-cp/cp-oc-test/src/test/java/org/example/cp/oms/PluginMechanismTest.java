@@ -82,14 +82,10 @@ public class PluginMechanismTest {
             log.info("Plugin: {}", plugin.getCode());
         }
 
-        if (true) {
-            return;
-        }
-
         log.info("sleeping 2m，等待修改bp-isv里逻辑后发布新jar...");
         TimeUnit.MINUTES.sleep(2); // 等待手工发布新jar
         log.info("2m is up, go!");
-        Container.getInstance().loadPartnerPlugin("isv", "v1", localIsvJar, true);
+        Container.getInstance().loadPartnerPlugin("isv", "v2", localIsvJar, true);
         submitOrder(applicationContext, true); // 重新提交订单，看看是否新jar逻辑生效
 
         applicationContext.stop();
