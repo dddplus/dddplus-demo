@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-controller</artifactId>
-    <name>DDDPlus :: Demo :: CP :: Controller</name>
+    <name>DDDplus :: Demo :: CP :: Controller</name>
 
     <dependencies>
         <dependency>

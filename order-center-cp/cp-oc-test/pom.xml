@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-test</artifactId>
-    <name>DDDPlus :: Demo :: Test</name>
+    <name>DDDplus :: Demo :: Test</name>
 
     <dependencies>
         <dependency>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>${junit.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
