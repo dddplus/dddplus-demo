@@ -1,21 +1,18 @@
 package org.example.cp.oms;
 
-import lombok.extern.slf4j.Slf4j;
 import io.github.dddplus.annotation.UnderDevelopment;
 import io.github.dddplus.api.RequestProfile;
-import io.github.dddplus.runtime.registry.Container;
 import io.github.dddplus.plugin.IPlugin;
+import io.github.dddplus.runtime.registry.Container;
+import lombok.extern.slf4j.Slf4j;
 import org.example.cp.oms.domain.model.OrderModel;
 import org.example.cp.oms.domain.model.OrderModelCreator;
 import org.example.cp.oms.domain.service.SubmitOrder;
-import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
@@ -25,17 +22,8 @@ import static org.junit.Assert.assertEquals;
 @Slf4j
 @Ignore
 public class PluginMechanismTest {
-    private URL remoteKaJar;
-    private URL remoteIsvJar;
-
     private static final String localKaJar = "../../order-center-bp-ka/target/order-center-bp-ka-0.0.1.jar";
     private static final String localIsvJar = "../../order-center-bp-isv/target/order-center-bp-isv-0.0.1.jar";
-
-    @Before
-    public void setUp() throws MalformedURLException {
-        remoteIsvJar = new URL("https://github.com/funkygao/cp-ddd-framework/blob/master/doc/assets/jar/order-center-bp-isv-0.0.1.jar?raw=true");
-        remoteKaJar = new URL("https://github.com/funkygao/cp-ddd-framework/blob/master/doc/assets/jar/order-center-bp-ka-0.0.1.jar?raw=true");
-    }
 
     @UnderDevelopment // 需要运行在 profile:plugin 下，运行前需要mvn package为Plugin打包
     @Test
@@ -43,7 +31,7 @@ public class PluginMechanismTest {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-test.xml");
         applicationContext.start();
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5; i++) {
             // 同一个jar，load多次，模拟热更新，然后下单验证：走ISV前台逻辑
             log.info(String.join("", Collections.nCopies(50, String.valueOf(i + 1))));
             Container.getInstance().loadPartnerPlugin("isv", "v1", localIsvJar, true);
@@ -70,7 +58,7 @@ public class PluginMechanismTest {
                     // 加载properties资源，并且有中文
                     "加载资源文件成功！站点名称：北京市海淀区中关村中路1号",
                     // @AutoLogger
-                    "org.example.bp.oms.isv.extension.CustomModel.explain 入参:",
+                    "org.example.bp.oms.isv.extension.CustomModelExt.explain 入参:",
                     // CustomModel，扩展属性机制
                     "站点联系人号码：139100988343，保存到x2字段",
                     "已经发送给MQ"
