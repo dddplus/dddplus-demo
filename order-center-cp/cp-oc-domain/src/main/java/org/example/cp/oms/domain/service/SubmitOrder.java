@@ -28,7 +28,9 @@ public class SubmitOrder implements IDomainService {
     public void submit(@NotNull OrderModel orderModel) throws OrderException {
         // 先通过防并发扩展点防止一个订单多次处理：但防并发逻辑在不同场景下不同
         Lock lock = DDD.findAbility(SerializableIsolationAbility.class).acquireLock(orderModel);
-        if (SerializableIsolationAbility.useLock(lock) && !lock.tryLock()) {
+        if (!SerializableIsolationAbility.useLock(lock)) {
+            log.info("will not use lock");
+        } else if (!lock.tryLock()) {
             // 存在并发
             throw new OrderException(OrderErrorReason.SubmitOrder.OrderConcurrentNotAllowed);
         }
@@ -37,8 +39,10 @@ public class SubmitOrder implements IDomainService {
         List<String> steps = DDD.findAbility(DecideStepsAbility.class).decideSteps(orderModel, Steps.SubmitOrder.Activity);
         log.info("steps {}", steps);
 
-        // 通过步骤编排的模板方法执行每一个步骤，其中涉及到：步骤回滚，步骤重新编排
-        submitOrderStepsExec.execute(Steps.SubmitOrder.Activity, steps, orderModel);
+        if (steps != null && !steps.isEmpty()) {
+            // 通过步骤编排的模板方法执行每一个步骤，其中涉及到：步骤回滚，步骤重新编排
+            submitOrderStepsExec.execute(Steps.SubmitOrder.Activity, steps, orderModel);
+        }
 
         log.info("接单完毕！");
     }
