@@ -5,7 +5,7 @@
 ## 目录
 
 - [如何运行该演示](#如何运行该演示)
-- [项目基本介绍](https://github.com/funkygao/cp-ddd-framework/wiki/Demo-explained-%E7%A4%BA%E4%BE%8B%E8%AF%B4%E6%98%8E)
+- [项目基本介绍](https://github.com/funkygao/cp-ddd-framework/wiki/The-Demo)
 - [代码快速入门](#代码快速入门)
 - [代码结构](#代码结构)
    - [依赖关系](#依赖关系)
