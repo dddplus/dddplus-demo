@@ -16,6 +16,7 @@ import java.util.*;
 public class DecideStepsExt implements IDecideStepsExt {
     private static final List<String> emptySteps = Collections.emptyList();
 
+    // 通过RPC调用库存服务
     @Resource
     private IStockRpc stockService;
 

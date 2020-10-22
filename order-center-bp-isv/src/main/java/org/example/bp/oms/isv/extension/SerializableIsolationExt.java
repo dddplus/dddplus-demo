@@ -9,7 +9,7 @@ import org.example.cp.oms.spec.model.vo.LockEntry;
 import javax.validation.constraints.NotNull;
 import java.util.concurrent.TimeUnit;
 
-@Extension(code = IsvPartner.CODE, value = "isvSerializableIsolationExt")
+@Extension(code = IsvPartner.CODE, value = "isvSerializableIsolationExt", name = "ISV场景的订单锁机制")
 public class SerializableIsolationExt implements ISerializableIsolationExt {
 
     @Override
