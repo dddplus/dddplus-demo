@@ -2,7 +2,7 @@
 
 演示如何使用[DDDplus](https://github.com/funkygao/cp-ddd-framework)实现一套`订单履约中台OMS`。
 
-[OMS的业务入门](https://github.com/funkygao/oms/blob/master/README.md)。
+[OMS业务入门](https://github.com/funkygao/oms/blob/master/README.md)。
 
 ## 目录
 
