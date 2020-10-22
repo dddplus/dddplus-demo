@@ -27,6 +27,6 @@ public class IsvPartner implements IIdentityResolver<IOrderModel>, DisposableBea
 
     @Override
     public void destroy() throws Exception {
-        log.warn("destroy");
+        log.warn("IsvPartner destroyed");
     }
 }

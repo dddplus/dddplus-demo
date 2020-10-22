@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
+// 业务开展包里可以自己实现AOP机制
 @Aspect
 @Slf4j
 @Component

@@ -36,6 +36,7 @@ public class PresortExt implements IPresortExt {
         // Guava loaded with sun.misc.Launcher$AppClassLoader@1540e19d
         log.info("Guava loaded with {}", multiset.getClass().getClassLoader());
 
+        // 演示Plugin自带资源文件的场景
         loadProperties();
     }
 
@@ -46,7 +47,6 @@ public class PresortExt implements IPresortExt {
         }
     }
 
-    // 演示Plugin自带资源文件的场景
     private void loadProperties() {
         InputStream is = this.getClass().getResourceAsStream("/config.properties");
         InputStreamReader inputStreamReader = null;
