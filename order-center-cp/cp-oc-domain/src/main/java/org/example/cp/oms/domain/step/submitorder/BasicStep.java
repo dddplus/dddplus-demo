@@ -6,7 +6,7 @@ import io.github.dddplus.runtime.DDD;
 import io.github.dddplus.step.ReviseStepsException;
 import org.example.cp.oms.domain.ability.PresortAbility;
 import org.example.cp.oms.domain.ability.ReviseStepsAbility;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.step.SubmitOrderStep;
 import org.example.cp.oms.spec.Steps;
 import org.example.cp.oms.spec.exception.OrderException;
@@ -19,7 +19,7 @@ import java.util.List;
 public class BasicStep extends SubmitOrderStep {
 
     @Override
-    public void execute(@NotNull OrderModel model) throws OrderException {
+    public void execute(@NotNull OrderMain model) throws OrderException {
         model.setStep(this.stepCode());
 
         // 动态决定后续步骤：决定后续步骤这个行为，也抽象为扩展点，不同场景进行实现，以实现动态步骤编排的业务多态性
@@ -36,7 +36,7 @@ public class BasicStep extends SubmitOrderStep {
     }
 
     @Override
-    public void rollback(@NotNull OrderModel model, @NotNull OrderException cause) {
+    public void rollback(@NotNull OrderMain model, @NotNull OrderException cause) {
         log.info("will rollback now...");
     }
 

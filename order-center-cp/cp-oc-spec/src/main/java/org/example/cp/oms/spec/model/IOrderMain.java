@@ -6,9 +6,9 @@ import io.github.dddplus.model.IDomainModel;
 import lombok.NonNull;
 
 /**
- * 中台为业务前台输出的领域模型：以接口的方式控制visibility.
+ * 中台为业务前台输出的订单聚合根：以接口的方式控制visibility.
  */
-public interface IOrderModel extends IDomainModel {
+public interface IOrderMain extends IDomainModel {
 
     /**
      * 获取订单里包含的产品信息.

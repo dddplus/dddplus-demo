@@ -2,7 +2,7 @@ package org.example.cp.oms.domain.step.submitorder;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.cp.oms.spec.exception.OrderException;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.step.SubmitOrderStep;
 import org.example.cp.oms.spec.Steps;
 import io.github.dddplus.annotation.Step;
@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 public class ProductStep extends SubmitOrderStep {
 
     @Override
-    public void execute(@NotNull OrderModel model) throws OrderException {
+    public void execute(@NotNull OrderMain model) throws OrderException {
     }
 
     @Override

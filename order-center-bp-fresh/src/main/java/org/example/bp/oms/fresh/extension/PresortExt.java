@@ -4,7 +4,7 @@ import io.github.dddplus.annotation.Extension;
 import lombok.extern.slf4j.Slf4j;
 import org.example.bp.oms.fresh.FreshPartner;
 import org.example.cp.oms.spec.ext.IPresortExt;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 
 import javax.validation.constraints.NotNull;
 
@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 public class PresortExt implements IPresortExt {
 
     @Override
-    public void presort(@NotNull IOrderModel model) {
+    public void presort(@NotNull IOrderMain model) {
         log.info("Fresh里预分拣的结果：{}", new MockInnerClass().getResult());
     }
 

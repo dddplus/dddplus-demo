@@ -3,7 +3,7 @@ package org.example.cp.oms.controller;
 import lombok.extern.slf4j.Slf4j;
 import io.github.dddplus.api.RequestProfile;
 import io.github.dddplus.runtime.registry.Container;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.model.OrderModelCreator;
 import org.example.cp.oms.domain.service.SubmitOrder;
 import org.slf4j.MDC;
@@ -47,7 +47,7 @@ public class OrderController {
         creator.setSource(type);
         creator.setCustomerNo("goog"); // if 'home', HomeAppliancePattern will match
         creator.setExternalNo("20200987655");
-        OrderModel model = OrderModel.createWith(creator);
+        OrderMain model = OrderMain.createWith(creator);
 
         // 调用domain service完成该use case
         submitOrder.submit(model);

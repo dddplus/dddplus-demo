@@ -1,14 +1,14 @@
 package org.example.bp.oms.isv;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 import io.github.dddplus.annotation.Partner;
 import io.github.dddplus.ext.IIdentityResolver;
 import org.springframework.beans.factory.DisposableBean;
 
 @Partner(code = IsvPartner.CODE, name = "ISV业务前台")
 @Slf4j
-public class IsvPartner implements IIdentityResolver<IOrderModel>, DisposableBean {
+public class IsvPartner implements IIdentityResolver<IOrderMain>, DisposableBean {
     public static final String CODE = "ISV";
 
     public IsvPartner() {
@@ -17,7 +17,7 @@ public class IsvPartner implements IIdentityResolver<IOrderModel>, DisposableBea
     }
 
     @Override
-    public boolean match(IOrderModel model) {
+    public boolean match(IOrderMain model) {
         if (model.getSource() == null) {
             return false;
         }

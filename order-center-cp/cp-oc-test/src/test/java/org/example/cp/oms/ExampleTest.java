@@ -2,7 +2,7 @@ package org.example.cp.oms;
 
 import io.github.dddplus.api.RequestProfile;
 import org.example.cp.oms.spec.exception.OrderException;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.model.OrderModelCreator;
 import org.example.cp.oms.domain.service.SubmitOrder;
 import org.junit.Ignore;
@@ -38,7 +38,7 @@ public class ExampleTest {
         creator.setCustomerNo("home"); // HomeAppliancePattern 会触发家电相关的扩展点
         creator.setExternalNo("20200987655");
         creator.setRequestProfile(requestProfile);
-        OrderModel orderModel = OrderModel.createWith(creator);
+        OrderMain orderModel = OrderMain.createWith(creator);
 
         // ISV业务前台的下单执行：
         //   SerializableIsolationExt -> DecideStepsExt -> BasicStep(PresortExt) -> PersistStep(AssignOrderNoExt, CustomModelAbility) -> BroadcastStep
@@ -56,7 +56,7 @@ public class ExampleTest {
         creator.setCustomerNo("home"); // HomeAppliancePattern 会触发家电相关的扩展点
         creator.setExternalNo("20200987655");
         creator.setRequestProfile(requestProfile);
-        OrderModel orderModel = OrderModel.createWith(creator);
+        OrderMain orderModel = OrderMain.createWith(creator);
         try {
             submitOrder.submit(orderModel);
             fail();

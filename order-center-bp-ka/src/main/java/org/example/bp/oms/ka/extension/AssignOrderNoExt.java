@@ -3,7 +3,7 @@ package org.example.bp.oms.ka.extension;
 import lombok.extern.slf4j.Slf4j;
 import org.example.bp.oms.ka.KaPartner;
 import org.example.cp.oms.spec.ext.IAssignOrderNoExt;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 import io.github.dddplus.annotation.Extension;
 import org.example.cp.oms.spec.resource.IStockRpc;
 
@@ -19,7 +19,7 @@ public class AssignOrderNoExt implements IAssignOrderNoExt {
     private IStockRpc stockService;
 
     @Override
-    public void assignOrderNo(@NotNull IOrderModel model) {
+    public void assignOrderNo(@NotNull IOrderMain model) {
         log.info("KA 预占库存 GSM098");
         if (!stockService.preOccupyStock("GSM098")) {
             throw new RuntimeException("预占库存失败");

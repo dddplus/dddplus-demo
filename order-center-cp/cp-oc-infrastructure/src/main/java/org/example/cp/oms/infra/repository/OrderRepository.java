@@ -2,7 +2,7 @@ package org.example.cp.oms.infra.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.cp.oms.domain.facade.repository.IOrderRepository;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.infra.manager.IOrderManager;
 import org.example.cp.oms.infra.po.OrderMainData;
 import org.example.cp.oms.infra.translator.OrderTranslator;
@@ -19,7 +19,7 @@ public class OrderRepository implements IOrderRepository {
     private IOrderManager orderManager;
 
     @Override
-    public void persist(@NotNull OrderModel orderModel) {
+    public void persist(@NotNull OrderMain orderModel) {
         log.info("落库：{}", orderModel);
 
         if (true) {

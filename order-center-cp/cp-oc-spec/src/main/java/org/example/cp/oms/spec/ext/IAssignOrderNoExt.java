@@ -1,6 +1,6 @@
 package org.example.cp.oms.spec.ext;
 
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 import io.github.dddplus.ext.IDomainExtension;
 
 import javax.validation.constraints.NotNull;
@@ -10,6 +10,6 @@ import javax.validation.constraints.NotNull;
  */
 public interface IAssignOrderNoExt extends IDomainExtension {
 
-    void assignOrderNo(@NotNull IOrderModel model);
+    void assignOrderNo(@NotNull IOrderMain model);
 
 }

@@ -4,7 +4,7 @@ import org.example.cp.oms.domain.ability.AssignOrderNoAbility;
 import org.example.cp.oms.domain.ability.CustomModelAbility;
 import org.example.cp.oms.spec.exception.OrderException;
 import org.example.cp.oms.domain.facade.repository.IOrderRepository;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.step.SubmitOrderStep;
 import org.example.cp.oms.spec.Steps;
 import io.github.dddplus.annotation.Step;
@@ -20,7 +20,7 @@ public class PersistStep extends SubmitOrderStep {
     private IOrderRepository orderRepository;
     
     @Override
-    public void execute(@NotNull OrderModel model) throws OrderException {
+    public void execute(@NotNull OrderMain model) throws OrderException {
         // 分配订单号：不同场景下，订单号规则不同
         DDD.findAbility(AssignOrderNoAbility.class).assignOrderNo(model);
 

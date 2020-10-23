@@ -11,7 +11,7 @@ import org.example.cp.oms.domain.CoreDomain;
 import org.example.cp.oms.domain.ability.DecideStepsAbility;
 import org.example.cp.oms.spec.exception.OrderErrorReason;
 import org.example.cp.oms.spec.exception.OrderException;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.spec.Steps;
 
 import javax.annotation.Resource;
@@ -26,7 +26,7 @@ public class SubmitOrder implements IDomainService {
     @Resource
     private SubmitOrderStepsExec submitOrderStepsExec;
 
-    public void submit(@NotNull OrderModel orderModel) throws OrderException {
+    public void submit(@NotNull OrderMain orderModel) throws OrderException {
         // 先通过防并发扩展点防止一个订单多次处理：但防并发逻辑在不同场景下不同
         // 同时，也希望研发清楚：扩展点不是绑定到领域步骤的，它可以在任何地方使用！
         Lock lock = DDD.findAbility(SerializableIsolationAbility.class).acquireLock(orderModel);

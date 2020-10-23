@@ -1,6 +1,6 @@
 package org.example.cp.oms.spec.ext;
 
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 import org.example.cp.oms.spec.model.vo.LockEntry;
 import io.github.dddplus.ext.IDomainExtension;
 
@@ -17,6 +17,6 @@ public interface ISerializableIsolationExt extends IDomainExtension {
      * @param model
      * @return lock entry object. if null, 不需要防并发
      */
-    LockEntry createLockEntry(@NotNull IOrderModel model);
+    LockEntry createLockEntry(@NotNull IOrderMain model);
 
 }

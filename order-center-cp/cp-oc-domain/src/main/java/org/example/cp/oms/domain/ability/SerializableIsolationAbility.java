@@ -5,7 +5,7 @@ import org.example.cp.oms.domain.CoreDomain;
 import org.example.cp.oms.domain.facade.cache.IRedisClient;
 import org.example.cp.oms.domain.facade.lock.IRedisLockFactory;
 import org.example.cp.oms.spec.ext.ISerializableIsolationExt;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 import org.example.cp.oms.spec.model.vo.LockEntry;
 import io.github.dddplus.annotation.DomainAbility;
 import io.github.dddplus.runtime.BaseDomainAbility;
@@ -16,7 +16,7 @@ import java.util.concurrent.locks.Lock;
 
 @DomainAbility(domain = CoreDomain.CODE, name = "订单串行化隔离的能力")
 @Slf4j
-public class SerializableIsolationAbility extends BaseDomainAbility<IOrderModel, ISerializableIsolationExt> {
+public class SerializableIsolationAbility extends BaseDomainAbility<IOrderMain, ISerializableIsolationExt> {
     private static final Lock withoutLock = null;
 
     @Resource
@@ -25,7 +25,7 @@ public class SerializableIsolationAbility extends BaseDomainAbility<IOrderModel,
     @Resource
     private IRedisClient redisClient;
 
-    public Lock acquireLock(@NotNull IOrderModel model) {
+    public Lock acquireLock(@NotNull IOrderMain model) {
         LockEntry lockEntry = firstExtension(model).createLockEntry(model);
         if (lockEntry == null) {
             return withoutLock;
@@ -42,7 +42,7 @@ public class SerializableIsolationAbility extends BaseDomainAbility<IOrderModel,
     }
 
     @Override
-    public ISerializableIsolationExt defaultExtension(@NotNull IOrderModel model) {
+    public ISerializableIsolationExt defaultExtension(@NotNull IOrderMain model) {
         // 默认不防并发
         return null;
     }

@@ -8,7 +8,7 @@ import org.example.bp.oms.isv.IsvPartner;
 import org.example.bp.oms.isv.aop.AutoLogger;
 import org.example.bp.oms.isv.extension.util.WarehouseUtil;
 import org.example.cp.oms.spec.ext.IPresortExt;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class PresortExt implements IPresortExt {
 
     @Override
     @AutoLogger
-    public void presort(@NotNull IOrderModel model) {
+    public void presort(@NotNull IOrderMain model) {
         log.info("ISV里预分拣的结果：{}", new MockInnerClass().getResult());
 
         // 演示第三方包的使用：guava

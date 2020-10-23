@@ -6,14 +6,19 @@ import lombok.extern.slf4j.Slf4j;
 import io.github.dddplus.api.RequestProfile;
 import org.example.cp.oms.spec.exception.OrderException;
 import org.example.cp.oms.domain.model.vo.ProductDelegate;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 import org.example.cp.oms.spec.model.vo.IProductDelegate;
 
 import javax.validation.constraints.NotNull;
 
-@Getter
+/**
+ * 订单主档.
+ *
+ * <p>注意，它没有实现Serializable，因为它不会网络传递，也不会本地文件存储.</p>
+ */
+@Getter // 注意：它没有@Setter，是为了封装，包含订单一致性
 @Slf4j
-public class OrderModel implements IOrderModel {
+public class OrderMain implements IOrderMain {
 
     private String source;
     private String customerNo;
@@ -35,12 +40,12 @@ public class OrderModel implements IOrderModel {
     @Getter
     private String x1, x2;
 
-    public static OrderModel createWith(@NotNull OrderModelCreator creator) throws OrderException {
+    public static OrderMain createWith(@NotNull OrderModelCreator creator) throws OrderException {
         log.debug("creating with {}", creator);
-        return new OrderModel(creator).validate();
+        return new OrderMain(creator).validate();
     }
 
-    private OrderModel(OrderModelCreator creator) {
+    private OrderMain(OrderModelCreator creator) {
         this.source = creator.getSource();
         this.customerNo = creator.getCustomerNo();
         this.externalNo = creator.getExternalNo();
@@ -49,7 +54,7 @@ public class OrderModel implements IOrderModel {
         this.productDelegate = ProductDelegate.createWith(creator);
     }
 
-    private OrderModel validate() throws OrderException {
+    private OrderMain validate() throws OrderException {
         // 模型本身的基础校验
         return this;
     }

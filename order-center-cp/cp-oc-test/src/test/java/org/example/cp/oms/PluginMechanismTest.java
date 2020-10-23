@@ -5,7 +5,7 @@ import io.github.dddplus.api.RequestProfile;
 import io.github.dddplus.plugin.IPlugin;
 import io.github.dddplus.runtime.registry.Container;
 import lombok.extern.slf4j.Slf4j;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.model.OrderModelCreator;
 import org.example.cp.oms.domain.service.SubmitOrder;
 import org.junit.Ignore;
@@ -115,7 +115,7 @@ public class PluginMechanismTest {
         creator.setSource(source);
         creator.setCustomerNo("home"); // HomeAppliancePattern
         creator.setExternalNo("20200987655");
-        OrderModel orderModel = OrderModel.createWith(creator);
+        OrderMain orderModel = OrderMain.createWith(creator);
 
         // call the domain service
         SubmitOrder submitOrder = (SubmitOrder) applicationContext.getBean("submitOrder");

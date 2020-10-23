@@ -1,7 +1,7 @@
 package org.example.cp.oms.spec.ext;
 
 import io.github.dddplus.ext.IDomainExtension;
-import org.example.cp.oms.spec.model.IOrderModel;
+import org.example.cp.oms.spec.model.IOrderMain;
 
 import javax.validation.constraints.NotNull;
 
@@ -12,5 +12,5 @@ import javax.validation.constraints.NotNull;
  */
 public interface IPresortExt extends IDomainExtension {
 
-    void presort(@NotNull IOrderModel model);
+    void presort(@NotNull IOrderMain model);
 }

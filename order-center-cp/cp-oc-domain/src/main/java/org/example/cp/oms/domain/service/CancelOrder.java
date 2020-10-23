@@ -5,7 +5,7 @@ import org.example.cp.oms.domain.ability.DecideStepsAbility;
 import org.example.cp.oms.domain.ability.SerializableIsolationAbility;
 import org.example.cp.oms.spec.exception.OrderErrorReason;
 import org.example.cp.oms.spec.exception.OrderException;
-import org.example.cp.oms.domain.model.OrderModel;
+import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.step.CancelOrderStepsExec;
 import io.github.dddplus.annotation.DomainService;
 import io.github.dddplus.model.IDomainService;
@@ -25,7 +25,7 @@ public class CancelOrder implements IDomainService {
     @Resource
     private CancelOrderStepsExec cancelOrderStepsExec;
 
-    public void submit(@NotNull OrderModel orderModel) throws OrderException {
+    public void submit(@NotNull OrderMain orderModel) throws OrderException {
         Lock lock = DDD.findAbility(SerializableIsolationAbility.class).acquireLock(orderModel);
         if (SerializableIsolationAbility.useLock(lock) && !lock.tryLock()) {
             // 存在并发
