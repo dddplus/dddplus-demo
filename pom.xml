@@ -13,6 +13,7 @@
         <module>order-center-pattern</module>
         <module>order-center-bp-ka</module>
         <module>order-center-bp-isv</module>
+        <module>order-center-bp-fresh</module>
     </modules>
 
     <properties>
