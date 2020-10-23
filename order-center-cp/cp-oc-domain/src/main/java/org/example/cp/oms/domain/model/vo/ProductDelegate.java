@@ -20,7 +20,6 @@ public class ProductDelegate implements IProductDelegate {
         return delegate;
     }
 
-
     @Override
     public List<? extends IProduct> getProducts() {
         return products;

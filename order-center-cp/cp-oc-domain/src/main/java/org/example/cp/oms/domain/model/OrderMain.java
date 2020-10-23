@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import io.github.dddplus.api.RequestProfile;
+import org.example.cp.oms.domain.model.vo.OrderItemDelegate;
 import org.example.cp.oms.spec.exception.OrderException;
 import org.example.cp.oms.domain.model.vo.ProductDelegate;
 import org.example.cp.oms.spec.model.IOrderMain;
@@ -36,6 +37,7 @@ public class OrderMain implements IOrderMain {
     private String step;
 
     private ProductDelegate productDelegate;
+    private OrderItemDelegate orderItemDelegate;
 
     @Getter
     private String x1, x2;
@@ -52,6 +54,7 @@ public class OrderMain implements IOrderMain {
         this.requestProfile = creator.getRequestProfile();
 
         this.productDelegate = ProductDelegate.createWith(creator);
+        this.orderItemDelegate = OrderItemDelegate.createWith(creator);
     }
 
     private OrderMain validate() throws OrderException {
