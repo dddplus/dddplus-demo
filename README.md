@@ -70,3 +70,11 @@ KA，关键客户的个性化业务通过扩展点的实现完成。
 #### [order-center-bp-isv](order-center-bp-isv)
 
 ISV，独立软件开发商的个性化业务通过扩展点的实现完成。
+
+#### [order-center-bp-fresh](order-center-bp-fresh)
+
+Fresh，生鲜业务前台的个性化业务通过扩展点的实现完成。
+
+这个业务BP，被中台要求不能使用Spring框架开发，不能在业务扩展包里使用AOP等Spring机制，只能严格实现中台定义的扩展点。
+
+为了演示，ISV和KA这2个业务前台BP在开发业务扩展包时，可以使用Spring框架。

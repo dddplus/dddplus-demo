@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>cp-oc-test</artifactId>
-    <name>DDDplus :: Demo :: Test</name>
+    <name>DDDplus :: Demo :: CP :: Test</name>
 
     <dependencies>
         <dependency>

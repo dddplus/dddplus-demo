@@ -24,6 +24,7 @@ import static org.junit.Assert.assertEquals;
 public class PluginMechanismTest {
     private static final String localKaJar = "../../order-center-bp-ka/target/order-center-bp-ka-0.0.1.jar";
     private static final String localIsvJar = "../../order-center-bp-isv/target/order-center-bp-isv-0.0.1.jar";
+    private static final String localFreshJar = "../../order-center-bp-fresh/target/order-center-bp-fresh-0.0.1.jar";
 
     @UnderDevelopment // 需要运行在 profile:plugin 下，运行前需要mvn package为Plugin打包
     @Test
@@ -35,7 +36,7 @@ public class PluginMechanismTest {
             // 同一个jar，load多次，模拟热更新，然后下单验证：走ISV前台逻辑
             log.info(String.join("", Collections.nCopies(50, String.valueOf(i + 1))));
             Container.getInstance().loadPartnerPlugin("isv", "v1", localIsvJar, true);
-            submitOrder(applicationContext, true);
+            submitOrder(applicationContext, "ISV");
 
             // 通过日志验证执行正确性
             assertContains(
@@ -69,7 +70,7 @@ public class PluginMechanismTest {
 
         // 加载KA插件，并给KA下单
         Container.getInstance().loadPartnerPlugin("ka", "v1", localKaJar, true);
-        submitOrder(applicationContext, false);
+        submitOrder(applicationContext, "KA");
         assertContains(
                 "KA 预占库存 GSM098",
                 "KA的锁TTL大一些",
@@ -86,22 +87,32 @@ public class PluginMechanismTest {
         TimeUnit.MINUTES.sleep(2); // 等待手工发布新jar
         log.info("2m is up, go!");
         Container.getInstance().loadPartnerPlugin("isv", "v2", localIsvJar, true);
-        submitOrder(applicationContext, true); // 重新提交订单，看看是否新jar逻辑生效
+        submitOrder(applicationContext, "ISV"); // 重新提交订单，看看是否新jar逻辑生效
 
         applicationContext.stop();
     }
 
-    private void submitOrder(ApplicationContext applicationContext, boolean useIsvPartner) {
+    @Test
+    public void dynamicLoadPartnerWithoutSpring() throws Throwable {
+        // 加载中台容器
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-test.xml");
+        applicationContext.start();
+
+        for (int i = 0; i < 5; i++) {
+            Container.getInstance().loadPartnerPlugin("fresh", "v1", localFreshJar, false);
+            submitOrder(applicationContext, "Fresh");
+        }
+
+        applicationContext.stop();
+    }
+
+    private void submitOrder(ApplicationContext applicationContext, String source) {
         // prepare the domain model
         RequestProfile requestProfile = new RequestProfile();
         requestProfile.getExt().put("_station_contact_", "139100988343");
         OrderModelCreator creator = new OrderModelCreator();
         creator.setRequestProfile(requestProfile);
-        if (useIsvPartner) {
-            creator.setSource("ISV"); // IsvPartner
-        } else {
-            creator.setSource("KA"); // KaPartner
-        }
+        creator.setSource(source);
         creator.setCustomerNo("home"); // HomeAppliancePattern
         creator.setExternalNo("20200987655");
         OrderModel orderModel = OrderModel.createWith(creator);

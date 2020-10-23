@@ -9,6 +9,7 @@
 
     <artifactId>order-center-bp-ka</artifactId>
     <name>DDDplus :: Demo :: BP :: KA</name>
+    <description>KA(关键客户)的业务前台BP</description>
 
     <dependencies>
         <!-- 业务前台依赖中台的spec jar进行能力复用和扩展 -->

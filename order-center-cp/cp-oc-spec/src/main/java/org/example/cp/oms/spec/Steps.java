@@ -10,6 +10,7 @@ public interface Steps {
 
         String BasicStep = "basic";
         String ProductStep = "product";
+        String PresortStep = "presort";
         String PersistStep = "persist";
         String BroadcastStep = "mq";
     }

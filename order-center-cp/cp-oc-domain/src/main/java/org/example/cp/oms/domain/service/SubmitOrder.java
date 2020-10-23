@@ -1,5 +1,6 @@
 package org.example.cp.oms.domain.service;
 
+import org.example.cp.oms.domain.ability.PostPersistAbility;
 import org.example.cp.oms.domain.ability.SerializableIsolationAbility;
 import org.example.cp.oms.domain.step.SubmitOrderStepsExec;
 import io.github.dddplus.annotation.DomainService;
@@ -27,6 +28,7 @@ public class SubmitOrder implements IDomainService {
 
     public void submit(@NotNull OrderModel orderModel) throws OrderException {
         // 先通过防并发扩展点防止一个订单多次处理：但防并发逻辑在不同场景下不同
+        // 同时，也希望研发清楚：扩展点不是绑定到领域步骤的，它可以在任何地方使用！
         Lock lock = DDD.findAbility(SerializableIsolationAbility.class).acquireLock(orderModel);
         if (!SerializableIsolationAbility.useLock(lock)) {
             log.info("will not use lock");
@@ -43,6 +45,8 @@ public class SubmitOrder implements IDomainService {
             // 通过步骤编排的模板方法执行每一个步骤，其中涉及到：步骤回滚，步骤重新编排
             submitOrderStepsExec.execute(Steps.SubmitOrder.Activity, steps, orderModel);
         }
+
+        DDD.findAbility(PostPersistAbility.class).afterPersist(orderModel);
 
         log.info("接单完毕！");
     }

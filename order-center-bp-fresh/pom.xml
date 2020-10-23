@@ -7,9 +7,9 @@
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>order-center-bp-isv</artifactId>
-    <name>DDDplus :: Demo :: BP :: ISV</name>
-    <description>ISV通路的业务前台BP</description>
+    <artifactId>order-center-bp-fresh</artifactId>
+    <name>DDDplus :: Demo :: BP :: Fresh</name>
+    <description>生鲜的业务前台BP，演示不支持Spring的业务场景</description>
 
     <dependencies>
         <!-- 业务前台依赖中台的spec jar进行能力复用和扩展 -->
@@ -17,20 +17,6 @@
             <groupId>org.example</groupId>
             <artifactId>cp-oc-spec</artifactId>
             <version>${project.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- 演示对第三方包的依赖，需要事先到中台申请，由中台打包进去；Plugin jar通过scope=provided使用 -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectjweaver.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
