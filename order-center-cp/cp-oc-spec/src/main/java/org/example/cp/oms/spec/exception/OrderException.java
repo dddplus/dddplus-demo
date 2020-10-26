@@ -2,7 +2,16 @@ package org.example.cp.oms.spec.exception;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * 前中台统一的错误码机制.
+ *
+ * <p>错误码，在domain层是以异常形式抛出的，因为异常有穿透能力</p>
+ * <p>在application层，统一转换为Response的errorCode</p>
+ */
 public class OrderException extends RuntimeException {
+    /**
+     * 中台定义的统一错误码.
+     */
     protected OrderErrorSpec errorReason;
 
     /**
