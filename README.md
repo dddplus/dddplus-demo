@@ -13,9 +13,10 @@
    - [依赖关系](#依赖关系)
    - 一套[订单履约中台代码库](#order-center-cp)
    - [中台的个性化业务包](#order-center-pattern)
-   - [两个业务前台代码库](#订单履约中台的多个业务前台)
+   - [三个业务前台代码库](#订单履约中台的多个业务前台)
       - [KA业务前台](#order-center-bp-ka)
       - [ISV业务前台](#order-center-bp-isv)
+      - [生鲜业务前台](#order-center-bp-fresh)
 
 ## 如何运行该演示
 
