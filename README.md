@@ -52,6 +52,12 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 - [中台特色的领域模型](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/model/IOrderMain.java)
    - spec jar里定义受限的领域模型输出给业务前台：通过接口，而不是类
    - 一种中台控制力更强的shared kernel机制
+- 领域步骤，业务模式等，中台如何统一定义，并输出给前台使用？
+   - 例如，业务前台是可以编排中台的步骤的，它必须要知道中台有哪些步骤
+   - [领域步骤的统一输出](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/Steps.java)
+   - [业务模式的统一输出](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/Patterns.java)
+- [中台如何输出资源给业务前台使用](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/resource/IStockRpc.java)
+   - 如果业务前台要使用中台的MQ怎么办？能否中台封装一下，不直接暴露给前台
 - [按需打包](order-center-cp/cp-oc-main/pom.xml)
    - 这样才能做到一套代码，支撑国内、国际业务
    - 灵活的部署形式
