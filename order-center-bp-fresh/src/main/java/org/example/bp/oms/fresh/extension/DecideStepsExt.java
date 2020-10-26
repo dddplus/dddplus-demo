@@ -3,6 +3,7 @@ package org.example.bp.oms.fresh.extension;
 import io.github.dddplus.annotation.Extension;
 import io.github.dddplus.ext.IDecideStepsExt;
 import io.github.dddplus.model.IDomainModel;
+import lombok.extern.slf4j.Slf4j;
 import org.example.bp.oms.fresh.FreshPartner;
 import org.example.cp.oms.spec.Steps;
 
@@ -10,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import java.util.*;
 
 @Extension(code = FreshPartner.CODE, name = "生鲜业务前台对所有流程的编排", value = "freshDecideStepsExt")
+@Slf4j
 public class DecideStepsExt implements IDecideStepsExt {
     private static final List<String> emptySteps = Collections.emptyList();
 
@@ -20,6 +22,7 @@ public class DecideStepsExt implements IDecideStepsExt {
             return emptySteps;
         }
 
+        log.info("Fresh steps: {}", steps);
         return steps;
     }
 

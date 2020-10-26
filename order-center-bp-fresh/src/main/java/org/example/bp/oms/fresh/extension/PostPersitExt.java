@@ -12,6 +12,6 @@ public class PostPersitExt implements IPostPersistExt {
 
     @Override
     public void afterPersist(IOrderMain model) {
-        log.info("{} 落库了，我要发个MQ通知我的下游！", model);
+        log.info("{} 落库了，我，Fresh，要发个MQ通知我的下游！", model);
     }
 }

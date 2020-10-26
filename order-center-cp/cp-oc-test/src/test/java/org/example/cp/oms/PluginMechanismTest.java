@@ -101,6 +101,12 @@ public class PluginMechanismTest {
         for (int i = 0; i < 5; i++) {
             Container.getInstance().loadPartnerPlugin("fresh", "v1", localFreshJar, false);
             submitOrder(applicationContext, "Fresh");
+
+            assertContains(
+                    "Fresh里预分拣的结果：2",
+                    "我，Fresh，要发个MQ通知我的下游！",
+                    "Fresh steps: [basic, persist]"
+            );
         }
 
         applicationContext.stop();
