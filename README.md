@@ -54,6 +54,7 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 - [中台特色的领域模型](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/model/IOrderMain.java)
    - spec jar里定义受限的领域模型输出给业务前台：通过接口，而不是类
    - 一种中台控制力更强的shared kernel机制
+   - domain层是如何实现的领域模型接口的：[订单主档](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/model/OrderMain.java)
 - 领域步骤，业务模式等，中台如何统一定义，并输出给前台使用？
    - 例如，业务前台是可以编排中台的步骤的，它必须要知道中台有哪些步骤
    - [领域步骤的统一输出](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/Steps.java)
