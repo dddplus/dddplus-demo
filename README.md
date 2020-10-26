@@ -17,6 +17,7 @@
       - [KA业务前台](#order-center-bp-ka)
       - [ISV业务前台](#order-center-bp-isv)
       - [生鲜业务前台](#order-center-bp-fresh)
+- [如何快速搭建中台工程骨架](#如何快速搭建中台工程骨架)
 
 ## 如何运行该演示
 
@@ -79,3 +80,11 @@ Fresh，生鲜业务前台的个性化业务通过扩展点的实现完成。
 这个业务BP，被中台要求不能使用Spring框架开发，不能在业务扩展包里使用AOP等Spring机制，只能严格实现中台定义的扩展点。
 
 为了演示，ISV和KA这2个业务前台BP在开发业务扩展包时，可以使用Spring框架。
+
+## 如何快速搭建中台工程骨架
+
+使用[dddplus-archetype](https://github.com/dddplus/dddplus-archetype)，可以快速搭建中台的工程骨架。
+
+``` bash
+mvn archetype:generate -DarchetypeGroupId=io.github.dddplus -DarchetypeArtifactId=dddplus-archetype -DarchetypeVersion=1.0.1 -DgroupId=com.foo -DartifactId=demo -Dpackage=com.foo -Dversion=1.0.0-SNAPSHOT -DinteractiveMode=false
+```
