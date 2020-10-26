@@ -36,6 +36,7 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 ## 代码快速入门
 
 - [中台架构特色的DDD分层架构](order-center-cp)
+   - 也可以通过[dddplus-archetype](https://github.com/dddplus/dddplus-archetype)，快速从零开始搭建中台的分层架构，并融入最佳实践
 - 扩展点：订单的防并发
    - [如何识别该业务属于KA业务前台](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/KaPartner.java)
    - [一个扩展点声明](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/ext/ISerializableIsolationExt.java)
@@ -46,9 +47,11 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
    - [扩展点被调用](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/service/SubmitOrder.java)
 - [前台对中台的步骤编排](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/DecideStepsExt.java)
    - [动态的步骤编排](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/step/submitorder/BasicStep.java)
-- [中台统一定义，兼顾前台个性化的错误码机制](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/exception/OrderException.java)
 - [扩展属性通过扩展点的实现](order-center-bp-isv/src/main/java/org/example/bp/oms/isv/extension/CustomModelExt.java)
+- [中台统一定义，兼顾前台个性化的错误码机制](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/exception/OrderException.java)
 - [按需打包](order-center-cp/cp-oc-main/pom.xml)
+   - 这样才能做到一套代码，支撑国内、国际业务
+   - 灵活的部署形式
 
 ## 代码结构
 
