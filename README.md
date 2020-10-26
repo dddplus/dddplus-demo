@@ -49,6 +49,9 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
    - [动态的步骤编排](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/step/submitorder/BasicStep.java)
 - [扩展属性通过扩展点的实现](order-center-bp-isv/src/main/java/org/example/bp/oms/isv/extension/CustomModelExt.java)
 - [中台统一定义，兼顾前台个性化的错误码机制](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/exception/OrderException.java)
+- [中台特色的领域模型](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/model/IOrderMain.java)
+   - spec jar里定义受限的领域模型输出给业务前台：通过接口，而不是类
+   - 一种中台控制力更强的shared kernel机制
 - [按需打包](order-center-cp/cp-oc-main/pom.xml)
    - 这样才能做到一套代码，支撑国内、国际业务
    - 灵活的部署形式
