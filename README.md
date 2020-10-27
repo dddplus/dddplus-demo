@@ -64,6 +64,9 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
    - [业务模式的统一输出](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/Patterns.java)
 - [中台如何输出资源给业务前台使用](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/resource/IStockRpc.java)
    - 如果业务前台要使用中台的MQ怎么办？能否中台封装一下，不直接暴露给前台
+- [库存支撑域给订单核心域的能力输出](order-center-domain-stock/order-center-stock-spec/src/main/java/org/example/oms/d/stock/spec/)
+   - [能力的实现](order-center-domain-stock/order-center-stock-domain/src/main/java/org/example/oms/d/stock/domain/service/StockService.java)
+   - [订单核心域对库存支撑域的调用](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/step/submitorder/StockStep.java)
 - [按需打包](order-center-cp/cp-oc-main/pom.xml)
    - 这样才能做到一套代码，支撑国内、国际业务
    - 灵活的部署形式
