@@ -79,9 +79,13 @@ public class OrderController {
         log.info("active plugins: {}", Container.getInstance().getActivePlugins());
 
         log.info("Reloading plugin:{} {}", plugin, pluginJar);
+        boolean useSpring = true;
+        if (plugin.toLowerCase().equals("fresh")) {
+            useSpring = false;
+        }
         try {
             // 具体使用时，需要一套plugin jar的发布平台配合使用：发布，灰度发布，回滚，版本控制，打包管理等
-            Container.getInstance().loadPartnerPlugin(plugin, "v1", pluginJar, true);
+            Container.getInstance().loadPartnerPlugin(plugin, "v1", pluginJar, false);
         } catch (Throwable cause) {
             log.error("fails to reload Plugin:{}", plugin, cause);
             return cause.getMessage();
@@ -94,5 +98,6 @@ public class OrderController {
     static {
         plugins.put("isv", "order-center-bp-isv/target/order-center-bp-isv-0.0.1.jar");
         plugins.put("ka", "order-center-bp-ka/target/order-center-bp-ka-0.0.1.jar");
+        plugins.put("fresh", "order-center-bp-fresh/target/order-center-bp-fresh-0.0.1.jar");
     }
 }
