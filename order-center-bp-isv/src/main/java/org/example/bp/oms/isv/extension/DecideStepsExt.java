@@ -18,12 +18,12 @@ public class DecideStepsExt implements IDecideStepsExt {
 
     // 通过RPC调用库存服务
     @Resource
-    private IStockRpc stockService;
+    private IStockRpc stockRpc;
 
     @Override
     @AutoLogger
     public List<String> decideSteps(@NotNull IDomainModel model, @NotNull String activityCode) {
-        stockService.preOccupyStock("SKU From ISV"); // 测试Plugin的Spring注入功能
+        stockRpc.preOccupyStock("SKU From ISV"); // 测试Plugin的Spring注入功能
 
         List<String> steps = stepsRegistry.get(activityCode);
         if (steps == null) {

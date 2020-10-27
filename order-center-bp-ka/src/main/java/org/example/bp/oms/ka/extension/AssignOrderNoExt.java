@@ -16,12 +16,12 @@ public class AssignOrderNoExt implements IAssignOrderNoExt {
     public static final String KA_ORDER_NO = "KA1012";
 
     @Resource
-    private IStockRpc stockService;
+    private IStockRpc stockRpc;
 
     @Override
     public void assignOrderNo(@NotNull IOrderMain model) {
         log.info("KA 预占库存 GSM098");
-        if (!stockService.preOccupyStock("GSM098")) {
+        if (!stockRpc.preOccupyStock("GSM098")) {
             throw new RuntimeException("预占库存失败");
         }
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>dddplus-demo</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <artifactId>order-center-domain-stock</artifactId>
+    <packaging>pom</packaging>
+    <name>DDDplus :: Demo :: Domain :: Stock</name>
+    <description>订单的支撑域：库存</description>
+
+    <modules>
+        <module>order-center-stock-spec</module>
+        <module>order-center-stock-domain</module>
+        <module>order-center-stock-infrastructure</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.dddplus</groupId>
+            <artifactId>dddplus-runtime</artifactId>
+            <version>${dddplus.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
