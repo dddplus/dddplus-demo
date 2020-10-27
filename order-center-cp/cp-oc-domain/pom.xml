@@ -17,6 +17,13 @@
             <version>${project.version}</version>
         </dependency>
 
+        <!-- 依赖支撑域的spec jar -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>order-center-stock-spec</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>io.github.dddplus</groupId>
             <artifactId>dddplus-plugin</artifactId>

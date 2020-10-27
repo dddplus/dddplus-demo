@@ -17,6 +17,7 @@
       - [KA业务前台](#order-center-bp-ka)
       - [ISV业务前台](#order-center-bp-isv)
       - [生鲜业务前台](#order-center-bp-fresh)
+   - [支撑域](#支撑域)
 - [如何快速搭建中台工程骨架](#如何快速搭建中台工程骨架)
 
 ## 如何运行该演示
@@ -98,6 +99,13 @@ Fresh，生鲜业务前台的个性化业务通过扩展点的实现完成。
 这个业务BP，被中台要求不能使用Spring框架开发，不能在业务扩展包里使用AOP等Spring机制，只能严格实现中台定义的扩展点。
 
 为了演示，ISV和KA这2个业务前台BP在开发业务扩展包时，可以使用Spring框架。
+
+### 支撑域
+
+![](http://www.plantuml.com/plantuml/svg/RPBFRh905CNtFWMhRy4pV6byWQwwwDf4cfYeCTNkmJzeDKHGI9lM5ajCQfk8DgcK0jMNcJiCRz7HcKObBCyzltivSCZN6uNhHgLKBLOAjPme4DS1pSBc4eyCiErSJXG52CQmkDyfaQh__setvRfqbZXjqARCInoLsdYYGV-5GfH2FnQ-ynY3Rz_WmugRtynYAyXVmBR50B8UW1mbSaWsHWecNeVUWLaxrjMK5KT1qXrcFY9fpQ6dPbY7zAO2xaDs-WFKxMDpam5HIhWylq3130MZz8T1_W261Wh7TF74OAFOj57m6lSzB2lm-8oYwVvSqj78LZ--A82bWkinXe-G7s9hXJNt21ahNB3k86g2x--xAqjN3Q5UAaginiuShvLuFY1VDl7V-HBDShYmIxWCSQ1pJKETQFBfqDVd0YOhU9Ave2LXg_Ut9gkW6pkHbwf5_dFz0W00)
+
+- [库存支撑域](order-center-domain-stock)
+- 更多的支撑域...
 
 ## 如何快速搭建中台工程骨架
 

@@ -32,6 +32,13 @@
             <version>${guava.version}</version>
         </dependency>
 
+        <!-- 把支撑域的实现包加载进来 -->
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>order-center-stock-infrastructure</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- logging -->
         <dependency>
             <artifactId>log4j-core</artifactId>

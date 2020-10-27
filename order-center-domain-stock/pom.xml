@@ -8,7 +8,22 @@
     </parent>
 
     <artifactId>order-center-domain-stock</artifactId>
+    <packaging>pom</packaging>
     <name>DDDplus :: Demo :: Domain :: Stock</name>
     <description>订单的支撑域：库存</description>
+
+    <modules>
+        <module>order-center-stock-spec</module>
+        <module>order-center-stock-domain</module>
+        <module>order-center-stock-infrastructure</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.dddplus</groupId>
+            <artifactId>dddplus-runtime</artifactId>
+            <version>${dddplus.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
