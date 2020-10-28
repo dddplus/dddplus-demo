@@ -33,6 +33,7 @@ public class DecideStepsExt implements IDecideStepsExt {
         List<String> submitOrderSteps = new ArrayList<>();
         stepsRegistry.put(Steps.SubmitOrder.Activity, submitOrderSteps);
         submitOrderSteps.add(Steps.SubmitOrder.BasicStep);
+        submitOrderSteps.add(Steps.SubmitOrder.StockStep);
         submitOrderSteps.add(Steps.SubmitOrder.PersistStep);
 
         // 订单取消步骤

@@ -105,7 +105,8 @@ public class PluginMechanismTest {
             assertContains(
                     "Fresh里预分拣的结果：2",
                     "我，Fresh，要发个MQ通知我的下游！",
-                    "Fresh steps: [basic, persist]"
+                    "RPC调用库存中心系统，返回值是OK",
+                    "Fresh steps: [basic, stock, persist]"
             );
         }
 
