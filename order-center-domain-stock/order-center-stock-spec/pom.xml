@@ -10,4 +10,6 @@
     <artifactId>order-center-stock-spec</artifactId>
     <name>DDDplus :: Demo :: Domain :: Stock :: Spec</name>
 
+    <!-- 支撑域的spec包，是不依赖core domain的spec包的：自治 -->
+
 </project>
