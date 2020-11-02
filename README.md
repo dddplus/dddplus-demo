@@ -114,8 +114,5 @@ Fresh，生鲜业务前台的个性化业务通过扩展点的实现完成。
 
 ## 如何快速搭建中台工程骨架
 
-使用[dddplus-archetype](https://github.com/dddplus/dddplus-archetype)，可以快速搭建中台的工程骨架。
+使用 [dddplus-archetype](https://github.com/dddplus/dddplus-archetype)，可以快速搭建中台的工程骨架。
 
-``` bash
-mvn archetype:generate -DarchetypeGroupId=io.github.dddplus -DarchetypeArtifactId=dddplus-archetype -DarchetypeVersion=1.0.1 -DgroupId=com.foo -DartifactId=demo -Dpackage=com.foo -Dversion=1.0.0-SNAPSHOT -DinteractiveMode=false
-```
