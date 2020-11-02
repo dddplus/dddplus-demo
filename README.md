@@ -1,5 +1,5 @@
 ![Requirement](https://img.shields.io/badge/JDK-8+-green.svg)
-[![](https://img.shields.io/badge/dddplus-1.0.2--SNAPSHOT-blue)](https://github.com/funkygao/cp-ddd-framework)
+[![DDDplus version](https://img.shields.io/badge/dddplus-1.0.2--SNAPSHOT-blue)](https://github.com/funkygao/cp-ddd-framework)
 
 # Demo of DDDplus
 
