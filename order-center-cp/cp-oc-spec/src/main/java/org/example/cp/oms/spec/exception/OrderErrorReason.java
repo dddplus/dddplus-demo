@@ -5,6 +5,7 @@ public interface OrderErrorReason {
     enum SubmitOrder implements OrderErrorSpec {
         OrderConcurrentNotAllowed("101", "同一个订单不允许并发"),
         InvalidExtenalNo("102", "非法的外部单号"),
+        ProductEmpty("103", "产品为空"),
         ;
 
         private final String code;

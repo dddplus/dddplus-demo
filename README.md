@@ -52,6 +52,8 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 - [前台对中台的步骤编排](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/extension/DecideStepsExt.java)
    - [动态的步骤编排](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/step/submitorder/BasicStep.java)
 - [扩展属性通过扩展点的实现](order-center-bp-isv/src/main/java/org/example/bp/oms/isv/extension/CustomModelExt.java)
+- [业务约束规则的显式化](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/specification/ProductNotEmptySpec.java)
+   - [如何使用](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/ability/extension/DefaultAssignOrderNoExt.java)
 - [中台统一定义，兼顾前台个性化的错误码机制](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/exception/OrderException.java)
 - [中台特色的领域模型](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/model/IOrderMain.java)
    - spec jar里定义受限的领域模型输出给业务前台：通过接口，而不是类
