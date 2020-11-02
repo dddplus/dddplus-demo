@@ -11,7 +11,7 @@ public class ProductNotEmptySpec implements ISpecification<IOrderMain> {
 
     @Override
     public boolean isSatisfiedBy(IOrderMain candidate, Notification notification) {
-        if (candidate.productDelegate().getProducts() == null || candidate.productDelegate().getProducts().isEmpty()) {
+        if (candidate.productDelegate() == null || candidate.productDelegate().getProducts() == null || candidate.productDelegate().getProducts().isEmpty()) {
             return false;
         }
 
