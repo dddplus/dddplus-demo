@@ -1,3 +1,6 @@
+![Requirement](https://img.shields.io/badge/JDK-8+-green.svg)
+[![](https://img.shields.io/badge/dddplus-1.0.2--SNAPSHOT-blue)](https://github.com/funkygao/cp-ddd-framework)
+
 # Demo of DDDplus
 
 演示如何使用[DDDplus](https://github.com/funkygao/cp-ddd-framework)实现一套`订单履约中台OMS`。
