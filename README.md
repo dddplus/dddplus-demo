@@ -10,6 +10,7 @@
 ## 目录
 
 - [如何运行该演示](#如何运行该演示)
+- [演示代码入口](#演示代码入口)
 - [项目基本介绍](https://github.com/funkygao/cp-ddd-framework/wiki/The-Demo)
 - [代码快速入门](#代码快速入门)
 - [代码结构](#代码结构)
@@ -36,6 +37,11 @@ java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
 curl -XPOST http://localhost:9090/order             # submit an order
 curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
 ```
+
+## 演示代码入口
+
+- 启动入口 [OrderServer.java](order-center-cp/cp-oc-main/src/main/java/org/example/cp/oms/OrderServer.java)
+- Web Controller [OrderController.java](order-center-cp/cp-oc-controller/src/main/java/org/example/cp/oms/controller/OrderController.java)
 
 ## 代码快速入门
 
