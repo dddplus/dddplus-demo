@@ -19,7 +19,7 @@ public class DefaultAssignOrderNoExt implements IAssignOrderNoExt {
     @Override
     public void assignOrderNo(@NotNull IOrderMain model) {
         // 演示调用业务约束的使用：把implicit business rules变成explicit
-        if (!productNotEmptySpec.isSatisfiedBy(model)) {
+        if (!productNotEmptySpec.satisfiedBy(model)) {
             log.warn("Spec:{} not satisfied", productNotEmptySpec);
             //throw new OrderException(OrderErrorReason.SubmitOrder.ProductEmpty);
         }
