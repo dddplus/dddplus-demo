@@ -50,7 +50,7 @@ curl -XPOST http://localhost:9090/reload?plugin=isv # plugin hot reloading
    - [domain层是如何通过依赖倒置模式与infrastructure层交互的](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/facade/mq/IMessageProducer.java)
    - [Repository同理](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/facade/repository/IOrderRepository.java)
    - [为什么依赖倒置统一存放在facade包](order-center-cp/cp-oc-domain/src/main/java/org/example/cp/oms/domain/facade/package-info.java)
-- 如何理解[Step](https://github.com/funkygao/cp-ddd-framework/wiki/Steps)
+- 如何理解 [Step](https://github.com/funkygao/cp-ddd-framework/wiki/Steps)
 - 扩展点：订单的防并发
    - [如何识别该业务属于KA业务前台](order-center-bp-ka/src/main/java/org/example/bp/oms/ka/KaPartner.java)
    - [一个扩展点声明](order-center-cp/cp-oc-spec/src/main/java/org/example/cp/oms/spec/ext/ISerializableIsolationExt.java)
