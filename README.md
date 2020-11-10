@@ -9,6 +9,7 @@
 
 ## 目录
 
+- [Terms explained](#terms-explained)
 - [如何运行该演示](#如何运行该演示)
 - [演示代码入口](#演示代码入口)
 - [项目基本介绍](https://github.com/funkygao/cp-ddd-framework/wiki/The-Demo)
@@ -23,6 +24,24 @@
       - [生鲜业务前台](#order-center-bp-fresh)
    - [支撑域](#支撑域)
 - [如何快速搭建中台工程骨架](#如何快速搭建中台工程骨架)
+
+## Terms explained
+
+- bp
+   - Business Partner
+   - 业务前台
+- cp
+   - Central Platform
+   - 中台
+- isv
+   - Independent Software Vendors
+- ka
+   - Key Account
+   - 关键客户
+- oc
+   - Order Center
+   - 订单中心
+
 
 ## 如何运行该演示
 
