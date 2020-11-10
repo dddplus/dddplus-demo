@@ -12,9 +12,9 @@ import org.mapstruct.factory.Mappers;
         unmappedTargetPolicy = ReportingPolicy.WARN,
         typeConversionPolicy = ReportingPolicy.ERROR
 )
-public interface OrderTranslator extends IBaseTranslator<OrderMain, OrderMainData> {
+public interface Model2Data extends IBaseTranslator<OrderMain, OrderMainData> {
 
-    OrderTranslator instance = Mappers.getMapper(OrderTranslator.class);
+    Model2Data instance = Mappers.getMapper(Model2Data.class);
 
     @Override
     OrderMainData translate(OrderMain orderModel);

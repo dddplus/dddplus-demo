@@ -1,8 +1,8 @@
 package org.example.cp.oms.controller;
 
-import lombok.extern.slf4j.Slf4j;
 import io.github.dddplus.api.RequestProfile;
 import io.github.dddplus.runtime.registry.Container;
+import lombok.extern.slf4j.Slf4j;
 import org.example.cp.oms.domain.model.OrderMain;
 import org.example.cp.oms.domain.model.OrderModelCreator;
 import org.example.cp.oms.domain.service.SubmitOrder;
@@ -48,6 +48,9 @@ public class OrderController {
         creator.setCustomerNo("goog"); // if 'home', HomeAppliancePattern will match
         creator.setExternalNo("20200987655");
         OrderMain model = OrderMain.createWith(creator);
+
+        // 实际项目会使用MapStruct，进行转换
+        // OrderModelCreator orderModelCreator = SubmitOrderRequestTranslator.instance.translate(new SubmitOrderRequest());
 
         // 调用domain service完成该use case
         submitOrder.submit(model);

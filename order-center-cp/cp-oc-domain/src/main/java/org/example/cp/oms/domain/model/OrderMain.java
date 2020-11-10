@@ -20,6 +20,7 @@ import javax.validation.constraints.NotNull;
 @Getter // 注意：它没有@Setter，是为了封装，包含订单一致性
 @Slf4j
 public class OrderMain implements IOrderMain {
+    private Long id;
 
     private String source;
     private String customerNo;
@@ -48,6 +49,7 @@ public class OrderMain implements IOrderMain {
     }
 
     private OrderMain(OrderModelCreator creator) {
+        this.id = creator.getId();
         this.source = creator.getSource();
         this.customerNo = creator.getCustomerNo();
         this.externalNo = creator.getExternalNo();

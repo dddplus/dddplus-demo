@@ -7,4 +7,6 @@ import javax.validation.constraints.NotNull;
 public interface IOrderRepository {
 
     void persist(@NotNull OrderMain orderModel);
+
+    OrderMain getOrder(@NotNull Long orderId);
 }
