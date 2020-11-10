@@ -8,10 +8,10 @@ clean:
 	@mvn clean
 
 run:package
-	@java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar
+	@java -XX:+HeapDumpOnOutOfMemoryError -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -Xloggc:gc.log -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 
 
 run-plugin:package-plugin
-	@java -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 9090 plugin
+	@java -XX:+HeapDumpOnOutOfMemoryError -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps -Xloggc:gc.log -jar order-center-cp/cp-oc-main/target/dddplus-demo.jar 9090 plugin
 
 depgraph:
 	@mvn install
