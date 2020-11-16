@@ -1,6 +1,7 @@
 package org.example.cp.oms.spec.model;
 
 import io.github.dddplus.api.RequestProfile;
+import org.example.cp.oms.spec.model.vo.IOrderItemDelegate;
 import org.example.cp.oms.spec.model.vo.IProductDelegate;
 import io.github.dddplus.model.IDomainModel;
 import lombok.NonNull;
@@ -16,6 +17,8 @@ public interface IOrderMain extends IDomainModel {
      * 获取订单里包含的产品信息.
      */
     IProductDelegate productDelegate();
+
+    IOrderItemDelegate itemDelegate();
 
     /**
      * 获取当前的请求参数.

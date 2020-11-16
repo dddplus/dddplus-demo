@@ -19,7 +19,7 @@ public class StockStep extends SubmitOrderStep {
     
     @Override
     public void execute(@NotNull OrderMain model) throws OrderException {
-        stockService.occupyStock("SKU098");
+        stockService.occupyStock(model);
     }
 
     @Override

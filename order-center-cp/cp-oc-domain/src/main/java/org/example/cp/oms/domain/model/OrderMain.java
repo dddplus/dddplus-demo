@@ -8,6 +8,7 @@ import org.example.cp.oms.domain.model.vo.OrderItemDelegate;
 import org.example.cp.oms.spec.exception.OrderException;
 import org.example.cp.oms.domain.model.vo.ProductDelegate;
 import org.example.cp.oms.spec.model.IOrderMain;
+import org.example.cp.oms.spec.model.vo.IOrderItemDelegate;
 import org.example.cp.oms.spec.model.vo.IProductDelegate;
 
 import javax.validation.constraints.NotNull;
@@ -101,7 +102,12 @@ public class OrderMain implements IOrderMain {
 
     @Override
     public IProductDelegate productDelegate() {
-        return null;
+        return productDelegate;
+    }
+
+    @Override
+    public IOrderItemDelegate itemDelegate() {
+        return orderItemDelegate;
     }
 
     @Override

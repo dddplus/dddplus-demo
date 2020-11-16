@@ -12,4 +12,12 @@
 
     <!-- 支撑域的spec包，是不依赖core domain的spec包的：自治 -->
 
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>cp-oc-spec</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
