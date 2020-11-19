@@ -1,6 +1,5 @@
 package org.example.cp.oms;
 
-import io.github.dddplus.annotation.UnderDevelopment;
 import io.github.dddplus.api.RequestProfile;
 import io.github.dddplus.plugin.IPlugin;
 import io.github.dddplus.runtime.registry.Container;
@@ -26,7 +25,7 @@ public class PluginMechanismTest {
     private static final String localIsvJar = "../../order-center-bp-isv/target/order-center-bp-isv-0.0.1.jar";
     private static final String localFreshJar = "../../order-center-bp-fresh/target/order-center-bp-fresh-0.0.1.jar";
 
-    @UnderDevelopment // 需要运行在 profile:plugin 下，运行前需要mvn package为Plugin打包
+    // 需要运行在 profile:plugin 下，运行前需要mvn package为Plugin打包
     @Test
     public void dynamicLoadPlugins() throws Throwable {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-test.xml");
